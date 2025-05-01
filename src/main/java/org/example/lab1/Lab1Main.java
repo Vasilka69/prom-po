@@ -2,7 +2,7 @@ package org.example.lab1;
 
 import java.util.Map;
 
-public class Main {
+public class Lab1Main {
 
     private static final String FILE_PATH = "src/main/resources/text/1.txt";
 

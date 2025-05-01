@@ -20,8 +20,7 @@ public class FileWordCounterRunnable implements Runnable {
 
         Map<String, Long> countedWordsFromFile = FileWordCounter.countWordsFromFile(filePath);
 
-        countedWordsFromFile.forEach((word, count) -> countedWords.computeIfAbsent(word, key -> 0L));
-        countedWordsFromFile.forEach((word, count) -> countedWords.computeIfPresent(word, (key, oldValue) -> oldValue + count));
+        countedWordsFromFile.forEach((word, count) -> countedWords.merge(word, count, Long::sum));
 
         System.out.println("Закончил работу %s".formatted(Thread.currentThread().getName()));
     }

@@ -18,7 +18,7 @@ public class FileWordCounter {
         return countWords(content);
     }
 
-    private static String getFileContent(String filePath) {
+    public static String getFileContent(String filePath) {
         try {
             return String.join(" ", Files.readAllLines(Path.of(filePath)));
         } catch (IOException e) {
